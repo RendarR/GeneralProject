@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <script defer="defer" src="src/index.js"></script>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class="center">
+    <div class="row header">
+        <div class="col-2"><a href="index.html" class="header__logo">
+            <div class="header__logo__img"><img src="../src/assets/img/logo.png" alt=""></div>
+            <div class="header__logo__h">bran</div>
+            <div class="header__logo__h header__logo__h-d">d</div>
+        </a></div>
+        <div class="col-10 header__form">
+            <div class="row container">
+                <div class="col-6 header__search">
+                    <form class="d-flex header__search-form">
+                        <button class="btn btn-light header__search-btn">Browse</button>
+                        <input class="form-control me-2 header__search none-border" type="search"
+                               placeholder="Search for item ..." aria-label="Поиск">
+                        <button class="btn header__search-btn-search" type="submit"><img src="../src/assets/img/59.png"
+                                                                                         alt=""></button>
+                    </form>
+                </div>
+                <div class="col-4 header__account" id="basket">
+                    <div class="header__basket__img"><a href="#" @click="showProduct = !showProduct"><img
+                            src="../src/assets/img/cart.png" alt=""></a>
+                        <div class="header__basket slide-in-right" v-if="showProduct">
+                            <div class="header__basket__product" v-for="item of items"><img :src="item.productImg"
+                                                                                            width="85" height="100"
+                                                                                            alt="">
+                                <div class="header__basket__product-text">
+                                    <div class="header__basket__product-text-h3 text-h3">{{ item.productName }}</div>
+                                    <img class="header__basket__product-text-stars" src="../src/assets/img/stars.png"
+                                         alt="">
+                                    <div class="header__basket__product-text-totallist text-h3">
+                                        {{ item.productPrice }}<span> x </span>{{ item.amount }}
+                                    </div>
+                                </div>
+                                <div class="header__basket__product-add"><img class="header__basket__product-delete-img"
+                                                                              src="../src/assets/img/ok.png" alt=""
+                                                                              @click="addBasket(item, items.indexOf(item))">
+                                </div>
+                                <div class="header__basket__product-delete"><img
+                                        class="header__basket__product-delete-img" src="../src/assets/img/x.png" alt=""
+                                        @click="deleteBasket(item, items.indexOf(item))"></div>
+                            </div>
+                            <div class="header__basket__total text-h2"><p class="drop-cart-total-total">TOTAL</p>
+                                <p class="drop-cart-total-price">${{ priceSum }}</p></div>
+                            <div class="header__basket__buttons"><a href="#"
+                                                                    class="header__basket__buttons-white text-h2">CHECKOUT</a>
+                                <a href="#" class="header__basket__buttons-rose text-h2">GO TO CART</a></div>
+                        </div>
+                        <div class="header__basket slide-out-right" v-else>
+                            <div class="header__basket__product" v-for="item of items"><img :src="item.productImg"
+                                                                                            width="85" height="100"
+                                                                                            alt="">
+                                <div class="header__basket__product-text">
+                                    <div class="header__basket__product-text-h3 text-h3">{{ item.productName }}</div>
+                                    <img class="header__basket__product-text-stars" src="../src/assets/img/stars.png"
+                                         alt="">
+                                    <div class="header__basket__product-text-totallist text-h3">
+                                        {{ item.productPrice }}<span> x </span>{{ item.amount }}
+                                    </div>
+                                </div>
+                                <div class="header__basket__product-add"><img class="header__basket__product-delete-img"
+                                                                              src="../src/assets/img/ok.png" alt=""
+                                                                              @click="addBasket(item, items.indexOf(item))">
+                                </div>
+                                <div class="header__basket__product-delete"><img
+                                        class="header__basket__product-delete-img" src="../src/assets/img/x.png" alt=""
+                                        @click="deleteBasket(item, items.indexOf(item))"></div>
+                            </div>
+                            <div class="header__basket__total text-h2"><p class="drop-cart-total-total">TOTAL</p>
+                                <p class="drop-cart-total-price">${{ priceSum }}</p></div>
+                            <div class="header__basket__buttons"><a href="#"
+                                                                    class="header__basket__buttons-white text-h2">CHECKOUT</a>
+                                <a href="#" class="header__basket__buttons-rose text-h2">GO TO CART</a></div>
+                        </div>
+                    </div>
+                    <button type="button" class="button-rose">My Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+</body>
+</html>
