@@ -1,0 +1,75 @@
+$purple: rgb(241, 109, 127);
+$purple-l: #f58291;
+$grey: rgb(74, 74, 74);
+$grey-light: rgb(155, 155, 155);
+$box-shadow: 0 0 10px 1px rgba(221, 221, 221, 1);
+$bacground:#e8e8e8;
+
+.sales{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(90deg, rgba(237,216,184,1), rgba(149,177,201,1) 100%);
+    display: flex;
+    justify-content: center;
+    &__button{
+      display: flex;
+      justify-content: center;
+      position: absolute;
+    }
+    &__general{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: -50px;
+    }
+    &__text{
+        background-color: $bacground;
+        display: inline-block;
+        margin: 40px 0 0 -10px ;
+        &-h2{
+          font-size: 18px;
+          font-weight: 300;
+          color: #222222;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          margin-left: 19px;
+          margin-top: 16px;
+          margin-right: 20px;
+        }
+        &-h1{
+          font-size: 30px;
+          font-weight: 600;
+          color: $purple;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          margin-left: 19px;
+          margin-bottom: 16px;
+          margin-right: 20px;
+        }
+    }
+    &__colomn1{
+      &_top{
+        background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_1.png);
+        width: 560px;
+        height: 542px;
+      }
+      &_botom{
+        background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_2.png);
+        width: 560px;
+        height: 261px;
+      }
+      
+    }
+    &__colomn2{
+      &_top{
+        background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_3.png);
+        width: 560px;
+        height: 261px;
+      }
+      &_botom{
+        background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_4.png);
+        width: 560px;
+        height: 542px;  
+      }
+    }
+}

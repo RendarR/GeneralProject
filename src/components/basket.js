@@ -1,6 +1,6 @@
 export default () => {
     let app = new Vue({
-        el:"#basket",
+        el:"#app",
         data:{
             items:[],
             totalPrice:null,

@@ -1,0 +1,212 @@
+$purple: rgb(241, 109, 127);
+$purple-l: #f58291;
+$grey: rgb(74, 74, 74);
+$grey-light: rgb(155, 155, 155);
+$box-shadow: 0 0 10px 1px rgba(221, 221, 221, 1);
+$bacground:#e8e8e8;
+.header{
+  padding: 30px 50px;
+  &__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img{
+      padding-right: 10px;
+
+    }
+    &__h{
+      font-size: 27px;
+      font-weight: 300;
+      color: rgb(34, 34, 34);
+      text-align: center;
+      letter-spacing: 0.03em;
+      line-height: 32px;
+      text-transform: uppercase;
+      &-d{
+        color: rgb(241, 109, 127);
+        font-weight: 700;
+      }
+    }
+  }
+  &__form{
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  &__search{
+    font-size: 13px;
+    &-form{
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      font-size: 14px;
+      border: 1px solid #F1F1F1;
+    }
+    &-btn{
+      font-size: 14px;
+      padding: 9px;
+      &-search{
+        padding: 6px 8px 9px 10px;
+      }
+    }
+  }
+  &__account{
+    display: flex;
+    align-items: center;
+    padding-left: 250px;
+  }
+  &__basket{
+    width: 329px;
+    transition: all 0.2s;
+    position: absolute;
+    background-color: white;
+    margin-top:20px;
+    border: 1.5px solid #F1F1F1;
+    border-radius: 5px;
+    &__product{
+      padding: 15px 15px 0 15px;
+      display: flex;
+      transition: 0.3s;
+      &:hover{
+        transform: scale(1.03);
+      }
+      &-text{
+        padding-left: 10px;
+        &-h3{
+          padding-top: 7px;
+        }
+        &-stars{
+          padding-top: 5px;
+        }
+        &-totallist{
+          padding-top: 10px;
+        }
+      }
+      &-delete{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        &-img{
+          transition: 0.5s;
+          &:hover{
+            -webkit-filter: brightness(60%);
+            transform: rotate(90deg);
+          }
+        }
+      }
+      &-add{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        transform: rotate(45deg);
+        margin-left: 3px;
+        &-img{
+          &:hover{
+            -webkit-filter: brightness(10%);
+          }
+        }
+      }
+    }
+    &__img{
+      margin-right: 26px;
+    }
+    &__total{
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 10px;
+      text-transform: uppercase;
+      &-white {
+        transition: 0.3s;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: rgb(74, 74, 74);
+        margin: 0 20% 15px;
+        padding: 5px;
+        &:hover {
+          box-shadow: 0 0 1px rgb(0 0 0);
+          color: white;
+          background-color: rgb(74, 74, 74);
+        }
+      }
+      &-rose {
+        transition: 0.3s;
+        border: 1px solid rgb(241, 109, 127);
+        border-radius: 5px;
+        color: rgb(241, 109, 127);
+        margin: 0 20% 15px;
+        padding: 5px;
+        &:hover {
+          box-shadow: 0 0 1px rgb(0 0 0);
+          color: white;
+          background-color: rgb(241, 109, 127);
+        }
+      }
+    }
+  }
+}
+
+.slide-out-right {
+  -webkit-animation: slide-out-right 0.25s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: slide-out-right 0.25s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+  
+.slide-in-right {
+  -webkit-animation: slide-in-right 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

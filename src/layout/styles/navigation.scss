@@ -1,0 +1,31 @@
+$purple: rgb(241, 109, 127);
+$purple-l: #f58291;
+$grey: rgb(74, 74, 74);
+$grey-light: rgb(155, 155, 155);
+$box-shadow: 0 0 10px 1px rgba(221, 221, 221, 1);
+$bacground:#e8e8e8;
+
+.navigation{
+    &__menu{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 215px;
+      flex-wrap: wrap;
+      &__li-a{
+        padding: 20px;
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: #222222;
+        line-height: 26px;
+        text-transform: uppercase;
+      }
+      &__li-a:hover{
+        color: $purple;
+        text-shadow: 0 0 25px $grey-light;
+      }
+      &__li:hover{
+        box-shadow: $box-shadow;
+      }
+    }
+  }

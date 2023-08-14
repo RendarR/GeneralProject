@@ -8,118 +8,457 @@
    <link rel="stylesheet" href="../src/layout/styles/index.css">
 </head>
 <body>
-<div class="center border-bottom">
-    <div class="row header">
-        <div class="col-2">
-            <a href="index.html" class="header__logo">
-                <div class="header__logo__img"><img src="../src/assets/img/logo.png" alt=""></div>
-                <div class="header__logo__h">bran</div>
-                <div class="header__logo__h header__logo__h-d">d</div>
-            </a>
-        </div>
-        <div class="col-10 header__form">
-            <div class="row container">
-                <div class="col-6 header__search">
-                    <form class="d-flex header__search-form">
-                        <button class="btn btn-light header__search-btn">Browse</button>
-                        <input class="form-control me-2 header__search none-border" type="search" placeholder="Search for item ..." aria-label="Поиск">
-                        <button class="btn header__search-btn-search" type="submit"><img src="../src/assets/img/59.png" alt=""></button>
-                    </form>
-                </div>
-                <div class="col-4 header__account" id="basket">
-                    <div class="header__basket__img">
-                        <a href="#" @click="showProduct = !showProduct">
-                            <img src="../src/assets/img/cart.png" alt="">
-                        </a>
-                        <div class="header__basket slide-in-right" v-if="showProduct">
-                            <div
-                                class="header__basket__product"
-                                v-for="item of items"
-                            >
-                                <img :src="item.productImg" width="85" height="100" alt="">
-                                <div class="header__basket__product-text">
-                                    <div class="header__basket__product-text-h3 text-h3">{{item.productName}}</div>
-                                    <!--   stars    -->
-                                    <img class="header__basket__product-text-stars" src="../src/assets/img/stars.png" alt="">
-                                    <div class="header__basket__product-text-totallist text-h3">{{item.productPrice}}<span> x </span>{{item.amount}}</div>
-                                </div>
-                                <div class="header__basket__product-add"><img  class="header__basket__product-delete-img" src="../src/assets/img/ok.png" alt="" @click="addBasket(item, items.indexOf(item))"></div>
-                                <div class="header__basket__product-delete"><img  class="header__basket__product-delete-img" src="../src/assets/img/x.png" alt="" @click="deleteBasket(item, items.indexOf(item))"></div>
-                            </div>
-                            <div class="header__basket__total text-h2">
-                                <p class="drop-cart-total-total">TOTAL</p>
-                                <p class="drop-cart-total-price">${{priceSum}}</p>
-                            </div>
-                            <div class="header__basket__buttons">
-                                <a href="#" class="header__basket__buttons-white text-h2">CHECKOUT</a>
-                                <a href="#" class="header__basket__buttons-rose text-h2">GO TO CART</a>
-                            </div>
-                        </div>
-                        <div class="header__basket slide-out-right " v-else>
-                            <div
-                                class="header__basket__product"
-                                v-for="item of items"
-                            >
-                                <img :src="item.productImg" width="85" height="100" alt="">
-                                <div class="header__basket__product-text">
-                                    <div class="header__basket__product-text-h3 text-h3">{{item.productName}}</div>
-                                    <img class="header__basket__product-text-stars" src="../src/assets/img/stars.png" alt="">
-                                    <div class="header__basket__product-text-totallist text-h3">{{item.productPrice}}<span> x </span>{{item.amount}}</div>
-                                </div>
-                                <div class="header__basket__product-add"><img  class="header__basket__product-delete-img" src="../src/assets/img/ok.png" alt="" @click="addBasket(item, items.indexOf(item))"></div>
-                                <div class="header__basket__product-delete"><img  class="header__basket__product-delete-img" src="../src/assets/img/x.png" alt="" @click="deleteBasket(item, items.indexOf(item))"></div>
-                            </div>
-                            <div class="header__basket__total text-h2">
-                                <p class="drop-cart-total-total">TOTAL</p>
-                                <p class="drop-cart-total-price">${{priceSum}}</p>
-                            </div>
-                            <div class="header__basket__buttons">
-                                <a href="#" class="header__basket__buttons-white text-h2">CHECKOUT</a>
-                                <a href="#" class="header__basket__buttons-rose text-h2">GO TO CART</a>
-                            </div>
-                        </div>
+<div id="app"> 
+    <div class="center border-bottom">
+        <div class="row header">
+            <div class="col-2">
+                <a href="index.html" class="header__logo">
+                    <div class="header__logo__img"><img src="../src/assets/img/logo.png" alt=""></div>
+                    <div class="header__logo__h">bran</div>
+                    <div class="header__logo__h header__logo__h-d">d</div>
+                </a>
+            </div>
+            <div class="col-10 header__form">
+                <div class="row container">
+                    <div class="col-6 header__search">
+                        <form class="d-flex header__search-form">
+                            <button class="btn btn-light header__search-btn">Browse</button>
+                            <input class="form-control me-2 header__search none-border" type="search" placeholder="Search for item ..." aria-label="Поиск">
+                            <button class="btn header__search-btn-search" type="submit"><img src="../src/assets/img/59.png" alt=""></button>
+                        </form>
                     </div>
-                    <button type="button" class="button-rose">My Account</button>
+                    <div class="col-4 header__account" id="basket">
+                        <div class="header__basket__img">
+                            <a href="#" @click="showProduct = !showProduct">
+                                <img src="../src/assets/img/cart.png" alt="">
+                            </a>
+                            <div class="header__basket slide-in-right" v-if="showProduct">
+                                <div
+                                    class="header__basket__product"
+                                    v-for="item of items"
+                                >
+                                    <img :src="item.productImg" width="85" height="100" alt="">
+                                    <div class="header__basket__product-text">
+                                        <div class="header__basket__product-text-h3 text-h3">{{item.productName}}</div>
+                                        <!--   stars    -->
+                                        <img class="header__basket__product-text-stars" src="../src/assets/img/stars.png" alt="">
+                                        <div class="header__basket__product-text-totallist text-h3">{{item.productPrice}}<span> x </span>{{item.amount}}</div>
+                                    </div>
+                                    <div class="header__basket__product-add"><img  class="header__basket__product-delete-img" src="../src/assets/img/ok.png" alt="" @click="addBasket(item, items.indexOf(item))"></div>
+                                    <div class="header__basket__product-delete"><img  class="header__basket__product-delete-img" src="../src/assets/img/x.png" alt="" @click="deleteBasket(item, items.indexOf(item))"></div>
+                                </div>
+                                <div class="header__basket__total text-h2">
+                                    <p class="drop-cart-total-total">TOTAL</p>
+                                    <p class="drop-cart-total-price">${{priceSum}}</p>
+                                </div>
+                                <div class="header__basket__buttons">
+                                    <a href="#" class="header__basket__buttons-white text-h2">CHECKOUT</a>
+                                    <a href="#" class="header__basket__buttons-rose text-h2">GO TO CART</a>
+                                </div>
+                            </div>
+                            <div class="header__basket slide-out-right " v-else>
+                                <div
+                                    class="header__basket__product"
+                                    v-for="item of items"
+                                >
+                                    <img :src="item.productImg" width="85" height="100" alt="">
+                                    <div class="header__basket__product-text">
+                                        <div class="header__basket__product-text-h3 text-h3">{{item.productName}}</div>
+                                        <img class="header__basket__product-text-stars" src="../src/assets/img/stars.png" alt="">
+                                        <div class="header__basket__product-text-totallist text-h3">{{item.productPrice}}<span> x </span>{{item.amount}}</div>
+                                    </div>
+                                    <div class="header__basket__product-add"><img  class="header__basket__product-delete-img" src="../src/assets/img/ok.png" alt="" @click="addBasket(item, items.indexOf(item))"></div>
+                                    <div class="header__basket__product-delete"><img  class="header__basket__product-delete-img" src="../src/assets/img/x.png" alt="" @click="deleteBasket(item, items.indexOf(item))"></div>
+                                </div>
+                                <div class="header__basket__total text-h2">
+                                    <p class="drop-cart-total-total">TOTAL</p>
+                                    <p class="drop-cart-total-price">${{priceSum}}</p>
+                                </div>
+                                <div class="header__basket__buttons">
+                                    <a href="#" class="header__basket__buttons-white text-h2">CHECKOUT</a>
+                                    <a href="#" class="header__basket__buttons-rose text-h2">GO TO CART</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="button-rose">My Account</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="center border-bottom">
-    <div class="navigation">
-        <ul class="navigation__menu">
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-            <li class="navigation__menu__li">
-                <a class="navigation__menu__li-a" href="#">HOME</a>
-            </li>
-        </ul>
+    <div class="center border-bottom">
+        <div class="navigation">
+            <ul class="navigation__menu">
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">HOME</a>
+                </li>
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">MAN</a>
+                </li>
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">WOMEN</a>
+                </li>
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">KIDS</a>
+                </li>
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">ACCOSERIES</a>
+                </li>
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">FEATURED</a>
+                </li>
+                <li class="navigation__menu__li">
+                    <a class="navigation__menu__li-a" href="#">HOT DEALS</a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-<div class="promo scroll">
-    <div class="promo__box center ">
-        <div class="promo__content">
-            <h1 class="promo__h1">THE BRAND</h1>
-            <h2 class="promo__h2">OF LUXERIOUS FASHION</h2>
+    <div class="promo scroll border-bottom">
+        <div class="promo__box center ">
+            <div class="promo__content">
+                <div class="promo__h scale-in-hor-left">
+                    <h1 class="promo__h1">THE BRAND</h1>
+                    <h2 class="promo__h2">OF LUXERIOUS FASHION</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sales center">
+        <div class="sales__button">
+            <button class="btn-big">MORE HOT!</button>
+        </div>
+        <div class="sales__general">
+            <div class="sales__colomn1">
+                <div class="sales__colomn1_top">
+                    <div class="sales__text">
+                        <h2 class="sales__text-h2">
+                            HOT DEAL
+                        </h2>
+                        <h1 class="sales__text-h1">
+                            FOR MEN
+                        </h1>
+                    </div>
+                </div>
+                <div class="sales__colomn1_botom">
+                    <div class="sales__text">
+                        <h2 class="sales__text-h2">
+                            30% OFFER
+                        </h2>
+                        <h1 class="sales__text-h1">
+                            WOMEN
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="sales__colomn2">
+                <div class="sales__colomn2_top">
+                    <div class="sales__text">
+                        <h2 class="sales__text-h2">
+                            luxirous & trendy
+                        </h2>
+                        <h1 class="sales__text-h1">
+                            accesories
+                        </h1>
+                    </div>
+                </div>
+                <div class="sales__colomn2_botom">
+                    <div class="sales__text">
+                        <h2 class="sales__text-h2">
+                            NEW ARRIVALS
+                        </h2>
+                        <h1 class="sales__text-h1">
+                            FOR KIDS
+                        </h1>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <div class="fte center">
+        <div class="fte__block" id="fte"><!--fte-show-->
+            <div class="fte__arrr">
+                <div class="fte_arrr-btn">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="fte__center ">
+                <div class="shop">
+                    <div class="shop__item">
+                        <a href="#">
+                            <div class="shop__item__img">
+                                <img src="https://raw.githubusercontent.com/RendarR/Other/master/imgs/product7.png" alt="">
+                            </div>
+                            <div class="shop__item_downblock">
+                                <div class="shop__item__text">
+                                    <h1 class="shop__item__text-h1">
+                                        Name product
+                                    </h1>
+                                    <h2 class="shop__item__text-h2">
+                                        54$
+                                    </h2>
+                                </div>
+                                <button class="button-rose shop__item_downblock_btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="shop__item">
+                        <a href="#">
+                            <div class="shop__item__img">
+                                <img src="https://raw.githubusercontent.com/RendarR/Other/master/imgs/product5.png" alt="">
+                            </div>
+                            <div class="shop__item_downblock">
+                                <div class="shop__item__text">
+                                    <h1 class="shop__item__text-h1">
+                                        Name product
+                                    </h1>
+                                    <h2 class="shop__item__text-h2">
+                                       36$
+                                    </h2>
+                                </div>
+                                <button class="button-rose shop__item_downblock_btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="shop__item">
+                        <a href="#">
+                            <div class="shop__item__img">
+                                <img src="https://raw.githubusercontent.com/RendarR/Other/master/imgs/product9.png" alt="">
+                            </div>
+                            <div class="shop__item_downblock">
+                                <div class="shop__item__text">
+                                    <h1 class="shop__item__text-h1">
+                                        Name product
+                                    </h1>
+                                    <h2 class="shop__item__text-h2">
+                                        104$
+                                    </h2>
+                                </div>
+                                <button class="button-rose shop__item_downblock_btn">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="shop__all">
+                    <button class="shop__all__btn button-rose">BROWSE ALL PRODUCT</button>
+                </div>
+            </div>
+            <div class="fte__arrl">   
+                <div class="fte-arrl-btn">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news">
+        <div class="center d-flex">
+            <div class="news__left">
+                <div class="news__left__picture text-flicker-in-glow">
+                    <h1 class="news__left__picture_h1">30% OFFER</h1>
+                    <h2 class="news__left__picture_h2">FOR WOMEN</h2>
+                </div>
+            </div>
+            <div class="news__right">
+                <div class="news__right__content">
+                    <div class="news__right__content__img">
+                        <img src="../src/assets/img/divilery.png" alt="">
+                    </div>
+                    <div class="news__right__content__block">
+                        <h1 class="news__right__content__block-h1">Free Delivery</h1>
+                        <h2 class="news__right__content__block-h2">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</h2>
+                    </div>
+                </div>
+                <div class="news__right__content">
+                    <div class="news__right__content__img">
+                        <img src="../src/assets/img/sale.png" alt="">
+                    </div>
+                    <div class="news__right__content__block">
+                        <h1 class="news__right__content__block-h1">Sales & discounts</h1>
+                        <h2 class="news__right__content__block-h2">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</h2>
+                    </div>
+                </div>
+                <div class="news__right__content">
+                    <div class="news__right__content__img">
+                        <img src="../src/assets/img/corona.png" alt="">
+                    </div>
+                    <div class="news__right__content__block">
+                        <h1 class="news__right__content__block-h1">Quality assurance</h1>
+                        <h2 class="news__right__content__block-h2">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subs">
+        <div class="center">
+            <div class="subs__content">
+                <div class="subs__content__left">
+                    <div class="subs__content__left__slide">
+                        <div class="subs__content__left__slide_photo">
+                            <img src="../src/assets/img/photo.png" alt="">
+                        </div>
+                        <div class="subs__content__left__slide_text">
+                            <p class="subs__content__left__slide_text-p">“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+                            </p>
+                            <h2 class="subs__content__left__slide_text-h2">Bin Burhan</h2>
+                            <h3 class="subs__content__left__slide_text-h3">Dhaka, Bd</h3>
+                        </div>
+                    </div>
+                    <div class="subs__content__left__carousel">
+                        <div class="carousel__slide"></div>
+                        <div class="carousel__slide"></div>
+                        <div class="carousel__slide"></div>
+                    </div>
+                </div>
+                <div class="subs__content__right">
+                    <div class="subs__content__right__subs">
+                        <div class="subs__content__right__subs-h1">
+                            Subscribe
+                        </div>
+                        <div class="subs__content__right__subs-h2">
+                            FOR OUR NEWLETTER AND PROMOTION
+                        </div>
+                        <div class="subs__content__right__subs_input">
+                            <input type="text" class="subs__content__right__subs_input-left" placeholder="Search for item ...">
+    
+                            </input>
+                            <input type="button" class="subs__content__right__subs_input-right" value="Subscribe">
+    
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="downlist center">
+        <div class="downlist__blockleft">
+            <div class="downlist__blockleft_logo">
+                <a href="index.html" class="header__logo">
+                    <div class="header__logo__img"><img src="../src/assets/img/logo.png" alt=""></div>
+                    <div class="header__logo__h">bran</div>
+                    <div class="header__logo__h header__logo__h-d">d</div>
+                </a>
+        </div>
+        <div class="downlist__blockleft_p">
+            Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.
+            Efficiently plagiarize 24/365 action items and focused infomediaries.
+            Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+            lorem1000
+        </div>
+    </div>
+        <div class="downlist__blockright">
+            <div class="downlist__blockright__list row">
+                <ul class="downlist__blockright__list-ul col-3">
+                    <li class="downlist__blockright__list-li">COMPANY</li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Home</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Shop</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">About</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">How it Works</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Contects</a></li>
+                </ul>
+                <ul class="downlist__blockright__list-ul col-3">
+                    <li class="downlist__blockright__list-li">INFORMATION</li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Tearms & Condition</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Privacy Policy</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">How to Buy</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">How to Sell</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Promot</a></li>
+                </ul>
+                <ul class="downlist__blockright__list-ul col-3">
+                    <li class="downlist__blockright__list-li">SHOP CATEGORY</li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Men</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Women</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Child</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Apperel</a></li>
+                    <li class="downlist__blockright__list-li"><a href="" class="downlist__blockright__list-a">Brows All</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer center">
+        <div class="footer__left">
+            <p class="footer__left-p">© 2017  Brand  All Rights Reserved.</p>
+        </div>
+        <div class="footer__right">
+            <div class="footer__right__block">
+                <a href="#" target="_blank"><div class="social facebook"><i class="center_ fa fa-facebook fa-2x"></i></div></a>
+                <a href="#" target="_blank"><div class="social twitter"><i class="center_ fa fa-twitter fa-2x"></i></div></a>
+                <a href="#" target="_blank"><div class="social linkedin"><i class="center_ fa fa-linkedin fa-2x"></i></div></a>
+                <a href="#" target="_blank"><div class="social pinterest"><i class="center_ fa fa-pinterest fa-2x"></i></div></a>
+                <a href="#" target="_blank"><div class="social google-pluse"><i class="center_ fa fa-google-plus fa-2x"></i></div></a>
+            </div>
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<script>
+let app = new Vue({
+    el:"#app",
+    data:{
+        items:[],
+        totalPrice:null,
+        totalAmount:null,
+        showProduct: false, //ShowBasket
+        url:'https://raw.githubusercontent.com/kellolo/static/master/JSON/basket.json',
+        // url:'../../url/basket.json',
+
+    },
+    computed:{
+        priceSum(){
+            let sum = 0;
+            for(let item of this.items){
+                sum += (+item.productPrice * +item.amount) ;
+            }
+            // console.log(sum);
+            return sum;
+        }
+    },
+    methods:{
+        get(url){ //Основной метод для вытаскивания из сылки json
+            // fetch(url ссылка на json) then - метод получаешь результат из промиса
+            return fetch(url).then(d=>d.json())
+        },
+        deleteBasket(item,ix){
+            if(this.items[ix].amount){
+                item.amount -=1
+                console.log(item.amount)
+            }
+            else{
+                this.items.splice(ix,1);
+            }
+
+        },
+        addBasket(item){
+            console.log(item.amount)
+            item.amount +=1
+        }
+    },
+    mounted(){
+        this.get(this.url) //Основной метод для вытаскивания из json данные и помещение их в data: items[]
+            .then(item => { //Берем отдельный итем из ссылки и передаем его в массив итемс с контентом
+                this.items = item.content;
+                this.totalPrice = item.totalPrice;
+                this.totalAmount = item.amount;
+                console.log(item)
+                // console.log(item.content);
+                // console.log(item.totalPrice);
+                // console.log(item.totalAmount);
+            })
+    },
+    update(){
+    }
+})
+</script>
+<script type="module" src="../src/index.js">
+
+</script>
 </body>
 </html>

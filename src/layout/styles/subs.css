@@ -1,0 +1,104 @@
+.subs {
+  display: flex;
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/opacity.png), url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 438px;
+}
+.subs__content {
+  display: flex;
+  margin: 140px 0 0 0;
+}
+.subs__content__right {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.subs__content__right__subs {
+  display: flex;
+  flex-direction: column;
+}
+.subs__content__right__subs-h1 {
+  font-size: 24px;
+  color: #222224;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.subs__content__right__subs-h2 {
+  font-size: 14px;
+  color: #222224;
+  text-align: center;
+  letter-spacing: 0.03em;
+  padding-bottom: 35px;
+  font-weight: 700;
+}
+.subs__content__right__subs_input {
+  display: flex;
+}
+.subs__content__right__subs_input-left {
+  outline: none;
+  border: none;
+  padding: 18px 28px;
+  background-color: #E2E2E2;
+  width: 230px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px 0px 0px 30px;
+  color: #222224;
+}
+.subs__content__right__subs_input-right {
+  outline: none;
+  background-color: rgb(241, 109, 127);
+  border: none;
+  padding: 18px 20px;
+  margin-left: -4px;
+  border-radius: 0px 30px 30px 0px;
+  color: white;
+  transition: all 0.3s;
+}
+.subs__content__right__subs_input-right:hover {
+  background-color: #E9E9E9;
+  color: rgb(241, 109, 127);
+  box-shadow: 0 0 1px #adb5bd;
+  border: none;
+}
+.subs__content__left {
+  width: 50%;
+}
+.subs__content__left__slide {
+  display: flex;
+}
+.subs__content__left__slide_photo {
+  padding-right: 20px;
+}
+.subs__content__left__slide_text-p {
+  font-size: 16px;
+  font-style: italic;
+  color: #222224;
+  letter-spacing: 0.03em;
+  line-height: 26px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.subs__content__left__slide_text-h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f16d7f;
+  letter-spacing: 0.03em;
+  line-height: 26px;
+}
+.subs__content__left__slide_text-h3 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #222224;
+  letter-spacing: 0.03em;
+  line-height: 14px;
+}
+.subs__content__left__carousel {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+}/*# sourceMappingURL=subs.css.map */

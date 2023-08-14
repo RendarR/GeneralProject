@@ -1,0 +1,63 @@
+.sales {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: linear-gradient(90deg, rgb(237, 216, 184), rgb(149, 177, 201) 100%);
+  display: flex;
+  justify-content: center;
+}
+.sales__button {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+.sales__general {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: -50px;
+}
+.sales__text {
+  background-color: #e8e8e8;
+  display: inline-block;
+  margin: 40px 0 0 -10px;
+}
+.sales__text-h2 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #222222;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-left: 19px;
+  margin-top: 16px;
+  margin-right: 20px;
+}
+.sales__text-h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(241, 109, 127);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-left: 19px;
+  margin-bottom: 16px;
+  margin-right: 20px;
+}
+.sales__colomn1_top {
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_1.png);
+  width: 560px;
+  height: 542px;
+}
+.sales__colomn1_botom {
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_2.png);
+  width: 560px;
+  height: 261px;
+}
+.sales__colomn2_top {
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_3.png);
+  width: 560px;
+  height: 261px;
+}
+.sales__colomn2_botom {
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/sales_4.png);
+  width: 560px;
+  height: 542px;
+}/*# sourceMappingURL=sales.css.map */

@@ -1,7 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/dist/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+// const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     output: {
@@ -14,9 +15,9 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
-                test: /\.vue$/i,
+                test: /\.vue$/,
                 loader: 'vue-loader'
-            },
+              },
             {
                 test: /\.(png|jpe?g|svg|gif)$/i,
                 use: ['file-loader']
@@ -37,6 +38,6 @@ module.exports = {
                 }
             ]
         },),
-        // new VueLoaderPlugin(),
+        new VueLoaderPlugin(),
     ],
 }

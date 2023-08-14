@@ -1,0 +1,51 @@
+.promo {
+  background-color: #e8e8e8;
+}
+.promo__box {
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/promo.png);
+  height: 614px;
+  display: flex;
+  align-items: center;
+}
+.promo__content {
+  display: flex;
+  align-items: flex-start;
+  border-left: 12px solid rgb(241, 109, 127);
+}
+.promo__h {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.promo__h1 {
+  font-size: 80px;
+  font-weight: 600;
+  color: #222222;
+  letter-spacing: 0.3px;
+  line-height: 45px;
+  margin-bottom: 12px;
+}
+.promo__h2 {
+  margin-top: 4px;
+  font-size: 60px;
+  font-weight: 600;
+  color: #222222;
+  letter-spacing: 0.03em;
+  line-height: 34px;
+}
+
+.scale-in-hor-left {
+  animation: scale-in-hor-left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes scale-in-hor-left {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}/*# sourceMappingURL=promo.css.map */

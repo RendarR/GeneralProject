@@ -1,0 +1,46 @@
+.footer {
+  background-color: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer__left-p {
+  font-size: 16px;
+  color: #7a7a7a;
+  text-align: right;
+  letter-spacing: 0.03em;
+  line-height: 42px;
+  text-align: center;
+}
+.footer__right__block {
+  display: flex;
+}
+
+.social {
+  background: #fff;
+  height: 32px;
+  width: 32px;
+  margin: 0px 6px;
+  font-size: 11px;
+  color: #b2b2b2;
+}
+
+.fa-facebook {
+  margin: 6px 8px 2px 10px;
+}
+
+.fa-google-plus {
+  margin: 5px 8px 2px 2px;
+}
+
+.fa-pinterest {
+  margin: 5px 8px 2px 7px;
+}
+
+.fa-linkedin {
+  margin: 5px 8px 2px 8px;
+}
+
+.fa-twitter {
+  margin: 6px 8px 2px 7px;
+}/*# sourceMappingURL=footer.css.map */

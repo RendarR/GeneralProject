@@ -1,0 +1,184 @@
+.news {
+  background: linear-gradient(90deg, rgb(43, 43, 43), rgb(28, 28, 31) 10%, rgb(28, 28, 31) 90%, rgb(41, 41, 41) 100%);
+}
+.news__left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex: 1 0 0%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/offer.png), url(https://raw.githubusercontent.com/RendarR/Other/master/imgs/offerlogo.png);
+}
+.news__left__picture {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+.news__left__picture_h1 {
+  font-size: 54px;
+  font-weight: bold;
+  color: #f16d7f;
+  letter-spacing: 0.03em;
+}
+.news__left__picture_h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.03em;
+}
+.news__right {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  background-color: #1C1C1F;
+}
+.news__right__content {
+  margin-left: 38px;
+  margin-top: 12%;
+  margin-bottom: 12%;
+  display: flex;
+}
+.news__right__content__block {
+  margin: 0 0 0 30px;
+}
+.news__right__content__block-h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fbfbfb;
+  letter-spacing: 0.03em;
+}
+.news__right__content__block-h2 {
+  font-size: 14px;
+  font-weight: 300;
+  color: #fbfbfb;
+  letter-spacing: 0.03em;
+  line-height: 24px;
+}
+
+.text-flicker-in-glow {
+  animation: text-flicker-in-glow 4s linear both;
+}
+@keyframes text-flicker-in-glow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  10.1% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  10.2% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  20.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+}/*# sourceMappingURL=news.css.map */
