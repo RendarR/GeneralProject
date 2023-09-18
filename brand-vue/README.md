@@ -1,3 +1,5 @@
+Thist folder for work with Vue.JS 
+
 # brand
 
 ## Project setup
